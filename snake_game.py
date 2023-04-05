@@ -62,6 +62,7 @@ class Snake:
             
         self.next_intended_direction = Coordinate(starting_direction)
         self.current_direction = Coordinate(starting_direction)
+        
     def grow(self) -> None:
         """adds extra segment to snake at same position as last segment"""
         self.segments.append(self.segments[-1])
@@ -72,7 +73,8 @@ class Snake:
             raise ValueError('Snake speed greater than `FPS`') 
         if speed < 3:
             raise ValueError('Snake speed too low, inherent collision issues') 
-        self.speed = 1 / speed 
+        self.speed = 1 / speed
+        
     def move(self,seconds) -> None: 
         """updates the self.segments list location to move the snake.  Each segments gets the location of the segement before it except the head who gets a new location"""
 
